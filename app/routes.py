@@ -14,6 +14,6 @@ def index():
 @app.route('/outputSentence', methods = ['GET', 'POST'])
 def outputSentence():
     formData = dict(request.form)
-    sentence = formData['sentence'][0]
+    sentence = formData['sentence']
     output = model.evenOdd(sentence)
     return render_template ("outputSentence.html", sentence=sentence, output=output)
